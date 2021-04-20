@@ -24,7 +24,6 @@ public class CharGrid {
 	 */
 	public int charArea(char ch) {
 		return 0;
-
 	}
 
 	/**

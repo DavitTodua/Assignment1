@@ -63,9 +63,14 @@ public class StringCode {
 	 * Compute this in linear time using a HashSet. Len will be 1 or more.
 	 */
 	public static boolean stringIntersect(String a, String b, int len) {
-		HashSet<Character> collected = new HashSet<Character>();
-		for (int i = 0; i<a.length();i++) {
-
+		HashSet<String> collected = new HashSet<String>();
+		for (int i = 0; i<a.length()-len;i++) {
+			collected.add(a.substring(i,i+len));
+		}
+		for (int i =0; i<a.length()-len; i++) {
+			if(collected.contains(b.substring(i,i+len))) {
+				return true;
+			}
 		}
 		return false;
 	}
